@@ -7,9 +7,3 @@ def home(request):
     return render(request, 'recipes/home.html', context={'name': 'Jazon'})
 
 
-def sobre(request):
-    return HttpResponse('Sobre')
-
-
-def contact(request):
-    return HttpResponse('Contact!')
