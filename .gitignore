@@ -1,0 +1,52 @@
+# created by virtualenv automatically
+*
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Database files
+*.sqlite3
+db.sqlite3
+
+# Static files
+static/
+
+# Media files
+media/
+
+# Virtual environment
+venv/
+env/
+*.env/
+
+# IDE
+.vscode/
+.idea/
+.pychar/
+
+# Compiled Python files
+#*.pyc
+
+# Compiled C extensions
+*.so
+
+# User-specific files
+*.suo
+*.user
+*.sdf
+*.opensdf
+
+# Logs
+*.log
+
+# Python environment
+.Python
+python_environment
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Windows
+Thumbs.db
