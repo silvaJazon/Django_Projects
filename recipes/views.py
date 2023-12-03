@@ -3,12 +3,12 @@ from django.http import HttpResponse
 # Create your views here.
 
 
-def sobre(request):
-    return HttpResponse('Sobre!')
-
-
 def home(request):
-    return HttpResponse('Home!')
+    return render(request, 'recipes/home.html', context={'name': 'Jazon'})
+
+
+def sobre(request):
+    return HttpResponse('Sobre')
 
 
 def contact(request):
