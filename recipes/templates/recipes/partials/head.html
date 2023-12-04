@@ -1,31 +1,29 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/fontawesome.min.css"
-          integrity="sha512-KVdV5HNnN1f6YOANbRuNxyCnqyPICKUmQusEkyeRg4X0p8K1xCdbHs32aA7pWo6WqMZk0wAzl29cItZh8oBPYQ=="
-          referrerpolicy="no-referrer" rel="stylesheet"/>
-
-    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/brands.min.css"
-          integrity="sha512-BglNUJaVmT9HacZ2AsbVQxjswBmIf3AJj9hhXr/Yre33qU+A1p8gXUcavzcHYkWf5bIvLMIiEbdMrEVqb5h2Rg=="
-          referrerpolicy="no-referrer" rel="stylesheet"/>
-
-    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/solid.min.css"
-          integrity="sha512-LUxUs00S05YspUb2HCuUTBqTqbjJm2uNvwRXVTcl/jkr9ygYZptXhfknc52iBnPUNgHHHC9ivU4RV6UFxLxhfg=="
-          referrerpolicy="no-referrer" rel="stylesheet"/>
+    <title>Recipes</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&display=swap" rel="stylesheet">
 
-    <title>Recipes</title>
-    <style>
+    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/fontawesome.min.css"
+        integrity="sha512-KVdV5HNnN1f6YOANbRuNxyCnqyPICKUmQusEkyeRg4X0p8K1xCdbHs32aA7pWo6WqMZk0wAzl29cItZh8oBPYQ=="
+        referrerpolicy="no-referrer" rel="stylesheet"/>
+    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/brands.min.css"
+        integrity="sha512-BglNUJaVmT9HacZ2AsbVQxjswBmIf3AJj9hhXr/Yre33qU+A1p8gXUcavzcHYkWf5bIvLMIiEbdMrEVqb5h2Rg=="
+        referrerpolicy="no-referrer" rel="stylesheet"/>
+    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/solid.min.css"
+        integrity="sha512-LUxUs00S05YspUb2HCuUTBqTqbjJm2uNvwRXVTcl/jkr9ygYZptXhfknc52iBnPUNgHHHC9ivU4RV6UFxLxhfg=="
+        referrerpolicy="no-referrer" rel="stylesheet"/>
 
-     :root {
+    <style>
+        :root {
             --color-primary: #269fe6;
             --color-primary-hover: #2086c2;
             --color-primary-dark: #13141f;
@@ -69,57 +67,106 @@
             --spacing-gutter-large: 4rem;
         }
 
-        *{
-        padding: 0;
-        margin: 0 ;
-        box-sizing: border-box;
-
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
         }
 
         html {
-            font-size:62.5%
+            font-size: 62.5%;
         }
 
-        body{
+        body {
             font-size: 1.6rem;
             font-family: var(--font-primary);
             background: var(--color-gray-1);
         }
 
-        h1,h2,h3,h4,h5,h6{
-
-        font-family: var(--font-headings);
-
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-headings);
         }
 
-    .container{
-    max-width: 144rem;
-    margin: 0 auto;
-    padding: var( --spacing-gutter-medium)
-    }
+        .container {
+            max-width: 144rem;
+            margin: 0 auto;
+            padding: var(--spacing-gutter-medium);
+        }
 
-    .main-header-container{
-    background: var(--color-primary-dark);
-    }
+        .main-header-container {
+            background: var(--color-primary-dark);
+        }
 
-    .main-logo {
-    font-size: 4rem;
-    color: var(--color-white);
-    text-decoration: none;
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: center;
-    width: fit-content;
-    margin: 0 auto
+        .main-logo {
+            font-size: 4rem;
+            color: var(--color-white);
+            text-decoration: none;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+            margin: 0 auto;
+        }
 
-    }
+        .main-logo-icon {
+            margin-right: 2rem;
+        }
 
-    .main-logo-icon{
+        .search-form {
+            border: 0.2rem solid var(--color-primary-dark);
+            max-width: 64rem;
+            margin: 0 auto;
+            border-radius: .4rem;
+            position:relative;
+            transition: all 300ms ease-in-out;
+        }
 
-    margin-right: 2rem;
+        .search-input,
+        .search-button {
+            border: none;
+            background: none;
+            outline: none;
+            padding: 1rem;
+            transition: all 300ms ease-in-out;
+        }
 
-    }
+        .search-button{
+            position: absolute;
+            top: 0;
+            right: 0;
+            }
+
+         .search-button:focus{
+            outline: .1rem solid var(--color-primary);
+            background: rgba(0,0,0, .05)
+            }
+
+        .search-input{
+            width:100%;
+            padding-right:4rem;
+            }
+
+        .search-form:focus-within{
+               border-color: var(--color-primary);
+               background: var( --color-white)
+           }
+
+       .search-form:focus-within .search-button{
+                color: var(--color-primary);
+           }
+
+       .main-content{
+            padding-top: 0;
+       }
+
+        .main-content-list{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(34rem, 1fr));
+            gap: var(--spacing-gutter-large);
+       }
+
+
 
     </style>
 </head>
