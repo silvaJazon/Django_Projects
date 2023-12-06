@@ -1,5 +1,5 @@
 """
-ASGI config for Django_Framework_Projeto project.
+ASGI config for Controle_visitantes project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Django_Framework_Projeto.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Controle_visitantes.settings')
 
 application = get_asgi_application()
