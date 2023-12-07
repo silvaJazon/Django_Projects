@@ -35,4 +35,4 @@ class Porteiro(models.Model):
         db_table = "porteiro"
 
     def __str__(self):
-        return self.nome_completo
+        return f"ID: {self.pk} - {self.nome_completo}"

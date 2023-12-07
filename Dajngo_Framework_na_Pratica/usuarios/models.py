@@ -74,4 +74,4 @@ class User(AbstractBaseUser, PermissionsMixin):
         db_table = "usuario"
 
     def __str__(self):
-        return self.email
+        return f"ID: {self.pk} - {self.email}"

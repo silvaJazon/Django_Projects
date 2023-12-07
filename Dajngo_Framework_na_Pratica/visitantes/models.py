@@ -28,4 +28,4 @@ class Visitantes(models.Model):
         verbose_name_plural = "Visitantes"
 
     def __str__(self):
-        return f"{self.nome} {self.sobrenome}"
+        return f"ID: {self.pk} - {self.nome} {self.sobrenome}"
