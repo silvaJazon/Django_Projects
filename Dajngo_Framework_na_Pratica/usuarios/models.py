@@ -37,7 +37,8 @@ class UserManager(BaseUserManager):
 
         user.save()
 
-        return user
+        def get_active_users(self):
+            return self.get_queryset().filter(is_active=True)
 
 
 class User(AbstractBaseUser, PermissionsMixin):
@@ -63,6 +64,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     )
 
     USERNAME_FIELD = "email"
+    REQUIRED_FIELDS = ["first_name", "last_name"]
 
     objects = UserManager()
 
