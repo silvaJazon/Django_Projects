@@ -53,21 +53,21 @@ class User(AbstractBaseUser, PermissionsMixin):
     )
 
     is_staff = models.BooleanField(
-        verbose_name="Usuário e um Dev",
+        verbose_name="Usuário é um Dev",
         default=False,
     )
 
     is_superuser = models.BooleanField(
-        verbose_name="Usuario é um Superuser",
+        verbose_name="Usuario é um SuperUser",
         default=False,
     )
 
     USERNAME_FIELD = "email"
 
-    objects = UserManager
+    objects = UserManager()
 
     class Meta:
-        verbose_name = "Usuário",
+        verbose_name = "Usuário"
         verbose_name_plural = "Usuários"
         db_table = "usuario"
 
