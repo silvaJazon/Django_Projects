@@ -9,7 +9,7 @@ class VisitantesAdmin(admin.ModelAdmin):
     ordering = ('-horario_chegada',)
 
     fieldsets = (
-        (None, {
+        ('Informaçoes do Visitante',{
             'fields': ('nome', 'cpf', 'data_nascimento_visitante', 'numero_casa', 'placa_veiculo', 'autorizado')
         }),
         ('Informações de Tempo', {
