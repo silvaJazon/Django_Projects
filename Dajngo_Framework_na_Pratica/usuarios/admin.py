@@ -4,6 +4,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from usuarios.models import User
 
+
 class UserAdmin(BaseUserAdmin):
     list_display = ('email', 'is_active', 'is_staff', 'is_superuser')
     list_filter = ('is_active', 'is_staff', 'is_superuser')
@@ -22,5 +23,6 @@ class UserAdmin(BaseUserAdmin):
 
     search_fields = ('email',)
     ordering = ('email',)
+
 
 admin.site.register(User, UserAdmin)

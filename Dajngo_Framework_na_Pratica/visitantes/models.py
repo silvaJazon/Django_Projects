@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+import time
 
 
 class Visitantes(models.Model):
@@ -56,8 +57,8 @@ class Visitantes(models.Model):
     )
 
     morador_responsavel_do_visitante = models.CharField(
-        verbose_name="Morador responsavel",
-        max_length=198,
+        verbose_name="Morador responsável",
+        max_length=120,
         blank=True,
     )
 
@@ -67,7 +68,6 @@ class Visitantes(models.Model):
     )
 
     def save(self, *args, **kwargs):
-        # Se o visitante for autorizado e ainda não tiver horário de autorização
         if self.autorizado and not self.horario_autorizacao:
             self.horario_autorizacao = timezone.now()
 
@@ -78,6 +78,12 @@ class Visitantes(models.Model):
             self.autorizado = False
 
         super().save(*args, **kwargs)
+
+    def limpar_datas(self):
+        self.horario_chegada = None
+        self.horario_autorizacao = None
+        self.horario_saida = None
+        super().save()
 
     class Meta:
         verbose_name = "Visitante"
