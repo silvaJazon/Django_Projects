@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
-import time
+from porteiros.models import Porteiro
+
 
 
 class Visitantes(models.Model):
@@ -60,6 +61,12 @@ class Visitantes(models.Model):
         verbose_name="Morador responsável",
         max_length=120,
         blank=True,
+    )
+
+    registrado_por = models.ForeignKey(
+        "porteiros.Porteiro",
+        verbose_name="Porteiro responsável pelo registro",
+        on_delete=models.PROTECT,
     )
 
     autorizado = models.BooleanField(
