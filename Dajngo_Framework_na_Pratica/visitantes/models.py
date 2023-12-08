@@ -35,7 +35,9 @@ class Visitantes(models.Model):
 
     horario_chegada = models.DateTimeField(
         verbose_name="Horário de chegada na portaria",
-        auto_now_add=True,
+        auto_now_add=False,
+        blank=True,
+        null=True,
     )
 
     horario_saida = models.DateTimeField(
@@ -54,13 +56,13 @@ class Visitantes(models.Model):
     )
 
     morador_responsavel_do_visitante = models.CharField(
-        verbose_name="Morador responsavel pela autorização",
+        verbose_name="Morador responsavel",
         max_length=198,
         blank=True,
     )
 
     autorizado = models.BooleanField(
-        verbose_name="O visitante está autorizado? ",
+        verbose_name="Visitante autorizado? ",
         default=False,
     )
 
@@ -68,6 +70,9 @@ class Visitantes(models.Model):
         # Se o visitante for autorizado e ainda não tiver horário de autorização
         if self.autorizado and not self.horario_autorizacao:
             self.horario_autorizacao = timezone.now()
+
+        if self.horario_autorizacao is not None and self.horario_saida is None:
+            self.autorizado = True
 
         if self.horario_saida is not None:
             self.autorizado = False

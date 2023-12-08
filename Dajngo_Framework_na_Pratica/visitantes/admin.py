@@ -5,7 +5,7 @@ from .models import Visitantes
 class VisitantesAdmin(admin.ModelAdmin):
     list_display = ('pk', 'nome', 'cpf', 'autorizado', 'horario_chegada','morador_responsavel_do_visitante')
     search_fields = ('nome', 'cpf', 'pk')
-    list_filter = ('autorizado',)
+    list_filter = ('nome','autorizado')
     ordering = ('-horario_chegada',)
 
     fieldsets = (
@@ -19,5 +19,3 @@ class VisitantesAdmin(admin.ModelAdmin):
             'fields': ('morador_responsavel_do_visitante',),
         }),
     )
-
-    readonly_fields = ('horario_chegada',)
