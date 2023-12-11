@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Visitantes
 
+
 @admin.register(Visitantes)
 class VisitantesAdmin(admin.ModelAdmin):
     list_display = ('pk', 'nome', 'cpf', 'autorizado', 'morador_responsavel_do_visitante',
