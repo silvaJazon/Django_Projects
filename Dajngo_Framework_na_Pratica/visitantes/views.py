@@ -1,7 +1,11 @@
 from django.shortcuts import render
-
+from visitantes.forms import visitanteForm
 
 def registrar_visitante(request):
-    context = {}
+    form = visitanteForm()
+    context = {
+        "nome_pagina": "Registrar Visitantes",
+        "form": form
+    }
 
     return render(request, "registrar_visitante.html", context)
